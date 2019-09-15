@@ -3,7 +3,7 @@
 
 ## CONCEPTS::
 #### Non-blocking or Asynchronous I/O 
-Operators are functions that build on the observables foundation to enable sophisticated manipulation of collections. For, RxJS defines operators such as map(), filter(), concat(), and flatMap().
+Operators are functions that build on the observables foundation to enable sophisticated manipulation ossf collections. For, RxJS defines operators such as map(), filter(), concat(), and flatMap().
 #### Blocking I/O
 #### Blocking I/O
 ##### Blocking I/O
