@@ -1,0 +1,1 @@
+// /It is a modern web technology in which there is a continuous connection between the user’s browser(client) and the server
