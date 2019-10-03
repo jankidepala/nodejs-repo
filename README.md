@@ -16,6 +16,21 @@ V8 Call Stack ->LIFO
 in JS, callbacks are first class objects.
 Call Stack[func()] ---Node[timer] --- Queue [ab1, cb2]
 
+#### Stream
+- All stream emit events
+- Streams can be consumed by src.pipe(dst) - src readable and dst has to be writtable 
+- both can be duplex
+- pipe - a.pipe(b).pipe(c)
+- Mode of stream -> Paused stream.read() | Flowing EventEmitter
+- 2 diff types
+1. Stream Implemnetation
+2. Stream Consuming 
+Readable - fs.createReadStream \ data, end | Paused and Flowing
+Writable - data can be written fs.createWriteStream \ drain, finish
+Duplex -net.Socket
+Transform
+
+
 #### Non-blocking or Asynchronous I/O::
 Asynchronous I/O is a form of input/output processing that permits other processing to continue before the transmission has finished.
 
