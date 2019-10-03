@@ -16,19 +16,27 @@ V8 Call Stack ->LIFO
 in JS, callbacks are first class objects.
 Call Stack[func()] ---Node[timer] --- Queue [ab1, cb2]
 
-#### Stream
+#### Streams
+- Collection of data that might not be available all at once.
+- They don't have to fit in memory.
+- are readable or witable
 - All stream emit events
 - Streams can be consumed by src.pipe(dst) - src readable and dst has to be writtable 
 - both can be duplex
 - pipe - a.pipe(b).pipe(c)
 - Mode of stream -> Paused stream.read() | Flowing EventEmitter
 - 2 diff types
-1. Stream Implemnetation
-2. Stream Consuming 
-Readable - fs.createReadStream \ data, end | Paused and Flowing
-Writable - data can be written fs.createWriteStream \ drain, finish
-Duplex -net.Socket
-Transform
+1. Stream Implemnetation - who use stream module
+2. Stream Consuming - pipe or events
+
+4 diff types of stream
+1. Readable - stream from where data can be consumed. fs.createReadStream \ data, end | 
+- Readable stream can be Paused (stream.read()) or  Flowing mode
+- All readable stream start with paused mode
+- Flowing modestream needs EventEmitter
+2. Writable - data can be written fs.createWriteStream \ drain, finish
+3. Duplex -readable and writable. net.Socket
+4. Transform - zlib createGzip
 
 
 #### Non-blocking or Asynchronous I/O::
