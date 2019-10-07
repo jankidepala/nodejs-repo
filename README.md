@@ -43,6 +43,16 @@ connection is uni-directional, unlike web sockets
 Connection should always be kept alive
 text/event-stream content type header
 
+#### SCALING: Cluster and Child processor
+Single thread has limitation. Using multiple process is only way to scale  nodeJs
+We scale bcos of
+1. workload, 
+3 things to scale appl
+1. cloning - part of workload divided
+2. decompossing based on functionality - Microservice
+3. Splitting - knows as sharding, data partition
+
+
 #### Non-blocking or Asynchronous I/O::
 Asynchronous I/O is a form of input/output processing that permits other processing to continue before the transmission has finished.
 
