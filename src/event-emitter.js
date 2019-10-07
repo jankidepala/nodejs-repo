@@ -3,8 +3,8 @@ var eventEmitter = new events.EventEmitter();
 var ab = new events.EventEmitter();
 
 ab.on('yoyoEvents', (a) => {
-   function vbg(){
-      setImmediate( () =>{
+   function vbg() {
+      setImmediate(() => {
          console.log('Set Imm');
       })
       console.log('start');
@@ -15,4 +15,16 @@ ab.on('yoyoEvents', (a) => {
    console.log(a);
 })
 
-ab.emit('yoyoEvents', 'values');
+ab.emit('yoyoEvents', 'xxxvalue');
+
+var fs = require('fs');
+var readableStream = fs.createReadStream('../img/file.txt');
+var data = '';
+
+readableStream.on('data', function(chunk) {
+    data+=chunk;
+});
+
+readableStream.on('end', function() {
+    console.log(data);
+});

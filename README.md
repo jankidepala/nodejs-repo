@@ -38,6 +38,10 @@ Call Stack[func()] ---Node[timer] --- Queue [ab1, cb2]
 3. Duplex -readable and writable. net.Socket
 4. Transform - zlib createGzip
 
+#### Server sent events
+connection is uni-directional, unlike web sockets
+Connection should always be kept alive
+text/event-stream content type header
 
 #### Non-blocking or Asynchronous I/O::
 Asynchronous I/O is a form of input/output processing that permits other processing to continue before the transmission has finished.
