@@ -38,10 +38,16 @@ Call Stack[func()] ---Node[timer] --- Queue [ab1, cb2]
 3. Duplex -readable and writable. net.Socket
 4. Transform - zlib createGzip
 
+#### WebSockets 
+
 #### Server sent events
 connection is uni-directional, unlike web sockets
 Connection should always be kept alive
 text/event-stream content type header
+SSE is a mechanism that allows the server to asynchronously push the data to the client once the client-server connection is established.
+The server can then decide to send data whenever a new “chunk” of data is available.
+It can be considered as a one-way publish-subscribe model.
+
 
 #### SCALING: Cluster and Child processor
 Single thread has limitation. Using multiple process is only way to scale  nodeJs
