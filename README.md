@@ -39,7 +39,11 @@ Call Stack[func()] ---Node[timer] --- Queue [ab1, cb2]
 4. Transform - zlib createGzip
 
 #### WebSockets 
+To enable Web applications to maintain bidirectional communications with server-side processes, this specification introduces the WebSocket interface.
+Do not use if you do not need real time update. Use http instead
 
+when to use web sockets:
+Real time Applications, Gaming Applications, Chat
 #### Server sent events
 connection is uni-directional, unlike web sockets
 Connection should always be kept alive
@@ -47,7 +51,17 @@ text/event-stream content type header
 SSE is a mechanism that allows the server to asynchronously push the data to the client once the client-server connection is established.
 The server can then decide to send data whenever a new “chunk” of data is available.
 It can be considered as a one-way publish-subscribe model.
+SSE is perfect for scenarios such as:
+    When an efficient unidirectional communication protocol is needed that won’t add unnecessary server load (which is what happens with long polling)
+    When you need a protocol with a predefined standard for handling errors
+    When you want to use HTTP-based methods for realtime data streaming
+    When you need a unidirectional protocol with better latency for users tha other HTTP-based ways of streaming data
 
+Here are a few examples where SSE is already in use:
+    Subscribing to a feed of cryptocurrency or stock prices
+    Subscribing to a Twitter feed
+    Receiving live sports scores
+    News updates or alerts
 
 #### SCALING: Cluster and Child processor
 Single thread has limitation. Using multiple process is only way to scale  nodeJs
