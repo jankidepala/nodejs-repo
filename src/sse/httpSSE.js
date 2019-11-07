@@ -23,7 +23,7 @@ server.on('request', (req, res) => {
 
                     console.log(data.toString());
                    // data1.push(data);
-                    res.write(data);
+                    res.write("data");
                 });
             })
             

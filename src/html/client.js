@@ -1,9 +1,20 @@
+console.log('Client called')
 const http = require('http');
-var express = require('express');
 
-var app = express();
-app.get('/', (req, res) => {
-    var par= getparams(req);
+const tweetContainer = document.getElementById('tweets-container')
+const messageForm = document.getElementById('send-container')
+const messageInput = document.getElementById('message-input')
+
+messageForm.addEventListener('submit', e => {
+    e.preventDefault()
+    console.log(e)
+    const message = messageInput.value
+    console.log(message)
+    appendMessage(`You: ${message}`)
+    sseSession();
+  })
+
+  const sseSession = () => {
     http.get({
         agent: false,
         path: '/stream',
@@ -27,17 +38,9 @@ app.get('/', (req, res) => {
             //res.write( n);
         });
     })
-
-
-})
-
-const getparams =(req) =>{
-    var params = req.query.tweet;
-    console.log(params)
-    return params;
-
-}
-// what port to run server on
-app.listen(1111, function () {
-    console.log('server started on port 1111');
-});
+  }
+  function appendMessage(message) {
+    const messageElement = document.createElement('div')
+    messageElement.innerText = message
+    tweetContainer.append(messageElement)
+  }

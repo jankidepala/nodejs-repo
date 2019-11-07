@@ -3,6 +3,10 @@ var express = require('express');
 
 var app = express();
 app.get('/', (req, res) => {
+res.write('sdfdsjn')
+
+})
+app.get('/some', (req, res) => {
     var par= getparams(req);
     http.get({
         agent: false,
@@ -30,6 +34,7 @@ app.get('/', (req, res) => {
 
 
 })
+
 
 const getparams =(req) =>{
     var params = req.query.tweet;
