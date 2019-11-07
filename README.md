@@ -23,18 +23,18 @@ Call Stack[func()] ---Node[timer] --- Queue [ab1, cb2]
     4. web sockets
     5. serve sent events
 
-- Ajax polling/regular polling - req and response
-- Long polling - Long polling is technique where the server elects to hold a client connection open for as long as possible, delivering a response only after data becomes available or timeout threshold has been reached. After receiving response client immediately sends the next request.
-On the client side, only a single request to the server needs to be managed. When the response is received, the client can initiate a new request, repeating this process as many times as necessary.
-Challenges: Message can be lost if not received. Also performance and scaling, device support and fallbacks
+    - Ajax polling/regular polling - req and response
+    - Long polling - Long polling is technique where the server elects to hold a client connection open for as long as possible, delivering a response only after data becomes available or timeout threshold has been reached. After receiving response client immediately sends the next request.
+    On the client side, only a single request to the server needs to be managed. When the response is received, the client can initiate a new request, repeating this process as many times as necessary.
+    Challenges: Message can be lost if not received. Also performance and scaling, device support and fallbacks
 
-#### WebSockets 
+##### WebSockets 
 To enable Web applications to maintain bidirectional communications with server-side processes, this specification introduces the WebSocket interface.
 Do not use if you do not need real time update. Use http instead
 when to use web sockets:
 Real time Applications, Gaming Applications, Chat
 
-#### Server sent events
+##### Server sent events
 connection is uni-directional, unlike web sockets
 Connection should always be kept alive
 text/event-stream content type header
