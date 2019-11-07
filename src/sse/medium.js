@@ -21,8 +21,8 @@ var chunkData = []
 app.get('/', function (req, res, next) {
     req1 = req.query.equals;
     console.log(req1)
-    res.send(chunkData);
-    next();
+    res.write(chunkData);
+    //next();
 });
 
 var i=0;
